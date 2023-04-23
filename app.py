@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 from PIL import Image
-
+st.set_page_config(page_title="WhatsApp Chat Analyzer",layout="wide",initial_sidebar_state="expanded")
 st.sidebar.title("Whatsapp Chat Analyzer")
 
 uploaded_file = st.sidebar.file_uploader("Choose a file")
