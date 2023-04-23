@@ -5,16 +5,18 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 from PIL import Image
+import math
 st.set_page_config(page_title="WhatsApp Chat Analyzer",layout="wide",initial_sidebar_state="expanded")
 st.sidebar.title("Whatsapp Chat Analyzer")
 
 uploaded_file = st.sidebar.file_uploader("Choose a file")
 
-
+mobile="Android"
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     data = bytes_data.decode("utf-8")
-    df = preprocessor.preprocess(data)
+
+    df = preprocessor.preprocess(data,mobile)
 
     # fetch unique users
     user_list = df['user'].unique().tolist()
@@ -73,9 +75,14 @@ if uploaded_file is not None:
             df['sentiment_word'][i]=sentiment_word(df['sentiment'][i])
         my_bar.progress(100,text=progress_text)
         b = 0
-        for sent in df['sentiment']:
+        for sent in list(df['sentiment']):
             b += sent
-        sentiment_total = b // (df.shape[0])
+        if b/(len(list(df['sentiment'])))%1>0.5:
+            sentiment_total = math.ceil(b/(len(list(df['sentiment']))))
+        else:
+            sentiment_total = math.floor(b / (len(list(df['sentiment']))))
+
+
         col1, col2, col3, col4,col5 = st.columns(5)
 
         with col1:
