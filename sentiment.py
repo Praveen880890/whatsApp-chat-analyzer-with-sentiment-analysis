@@ -10,4 +10,3 @@ def sentiment_score(message):
     tokens = tokenizer.encode(message, return_tensors='pt')
     result = model(tokens)
     return int(torch.argmax(result.logits))+1
-

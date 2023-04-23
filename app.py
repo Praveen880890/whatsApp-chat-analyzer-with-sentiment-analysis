@@ -4,10 +4,13 @@ import sentiment as s
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+from PIL import Image
 
 st.sidebar.title("Whatsapp Chat Analyzer")
 
 uploaded_file = st.sidebar.file_uploader("Choose a file")
+
+
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     data = bytes_data.decode("utf-8")
@@ -201,7 +204,27 @@ if uploaded_file is not None:
                 st.pyplot(fig)
         except:
             pass
-
+#images
+st.sidebar.title("How to download the chat")
+if st.sidebar.button("Know about it"):
+    image = Image.open('step1.jpeg')
+    st.title("Step - 1")
+    st.image(image)
+    image = Image.open('step2.jpeg')
+    st.title("Step - 2")
+    st.image(image)
+    image = Image.open('step3.jpeg')
+    st.title("Step - 3")
+    st.image(image)
+    image = Image.open('step4.jpeg')
+    st.title("Step - 4")
+    st.image(image)
+    image = Image.open('step5.jpeg')
+    st.title("Step - 5")
+    st.image(image)
+    image = Image.open('step6.jpeg')
+    st.title("Step - 6")
+    st.image(image)
 
 
 
