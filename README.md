@@ -4,12 +4,11 @@
 2. [Features](#features)
 3. [Prerequisites](#prerequisites)
 4. [How to Use](#usage)
-5. [Sentiment Analysis Model](#sentiment-analysis-model-1)
-6. [Data Preprocessing](#data-preprocessing-1)
+5. [Sentiment Analysis Model](#sentiment-analysis-model)
+6. [Data Preprocessing](#data-preprocessing)
 7. [Note](#note)
-8. [Acknowledgments](#acknowledgments-1)
-9. [Disclaimer](#disclaimer)
-10. [Demo](#demo) 
+8. [Acknowledgments](#acknowledgments)
+9. [Demo](#demo) 
 
 # WhatsApp Chat Analyzer with Sentiment Analysis
 
